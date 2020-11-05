@@ -1,0 +1,5 @@
+flask
+json
+urllib.request
+requests
+gunicorn
