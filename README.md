@@ -15,7 +15,7 @@ Team Member 3: Lex Mascarenhas : lexmascarenhas3@gmail.com: 7744832463
 
 ## Project Details
 
-Hosted URL: <url>
+Hosted URL: https://anomaly-codecrunch.herokuapp.com/
 
 Tech Stack used:Python-flask, Postman, heroku, restcountries.eu api. 
 
@@ -28,12 +28,21 @@ Note/Comments:
 
 * Task 2: DONE
 
-* Task 3: NEW
+* Task 3: IN-PROGRESS
 
-* Task 4: NEW
+* Task 4: IN-PROGRESS
 
-* Task 5: NEW
+* Task 5: IN-PROGRESS
 
-* Task 6: NEW
+* Task 6: IN-PROGRESS
 
-* Task 7: NEW
+* Task 7: IN-PROGRESS
+
+* Task 8: IN-PROGRESS
+
+* Task 9: IN-PROGRESS
+
+* Task 10: IN-PROGRESS
+
+* Task 11: IN-PROGRESS
+
