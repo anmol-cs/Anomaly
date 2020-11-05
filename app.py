@@ -9,9 +9,10 @@ app.config['JSON_SORT_KEYS']=False
 ##SOLUTION 1 COUNTRY REST API##
 ##TASK 1:-GET COUNTRY BY NAME##
 @app.route('/country/name/', methods=['GET'])
-def freegeoip(country_name):
-    country_name=request.args['country_name']
-    url="https://restcountries.eu/rest/v2/name/"+country_name.strip()+"?fullText=true"
+def freegeoip():
+    name=request.args['name']
+    print(name)
+    url="https://restcountries.eu/rest/v2/name/"+name.strip()+"?fullText=true"
     url_request=requests.get(url)
     json_object=url_request.json()
     findic={}
@@ -24,7 +25,6 @@ def freegeoip(country_name):
     findic["flag"]=json_object[0]["flag"]
     findic["totalLanguages"]=count_dic(json_object[0]["languages"])
     findic["totalCurrencies"]=count_dic(json_object[0]["currencies"])
-    print(findic)
     return jsonify(findic)
 
 #Task 2: Get country by Code
