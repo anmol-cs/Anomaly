@@ -8,8 +8,9 @@ app = Flask(__name__)
 app.config['JSON_SORT_KEYS']=False
 ##SOLUTION 1 COUNTRY REST API##
 ##TASK 1:-GET COUNTRY BY NAME##
-@app.route('/country/name/<country_name>', methods=['GET'])
+@app.route('/country/name/', methods=['GET'])
 def freegeoip(country_name):
+    country_name=request.args['country_name']
     url="https://restcountries.eu/rest/v2/name/"+country_name.strip()+"?fullText=true"
     url_request=requests.get(url)
     json_object=url_request.json()
