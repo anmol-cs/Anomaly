@@ -17,15 +17,7 @@ Team Member 3: Lex Mascarenhas : lexmascarenhas3@gmail.com: 7744832463
 
 Hosted URL: <url>
 
-Tech Stack used:
-
-Python-flask
-
-Postman
-
-heroku
-
-restcountries.eu api
+Tech Stack used:Python-flask, Postman, heroku, restcountries.eu api. 
 
 Note/Comments:
 <any-other-information-you-need-to-add>
