@@ -4,7 +4,6 @@ import requests
 
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS']=False
-findic={}
 #SOLUTION 1: COUNTRY REST API
 #TASK 1: GET COUNTRY BY NAME
 @app.route('/country/name/<name>', methods=['GET'])
@@ -13,6 +12,7 @@ def nameSearch(name):
     obj=requests.get(obj)
     if obj:
         obj=obj.json()
+        findic={}
         findic["name"]=obj[0]["name"]
         findic["alpha2Code"]=obj[0]["alpha2Code"]
         findic["alpha3Code"]=obj[0]["alpha2Code"]
@@ -33,6 +33,7 @@ def codeSearch(code):
     obj=requests.get(obj)
     if obj:
         obj=obj.json()
+        findic={}
         findic["name"]=obj["name"]
         findic["alpha2Code"]=obj["alpha2Code"]
         findic["alpha3Code"]=obj["alpha3Code"]
@@ -57,6 +58,7 @@ def Search():
     obj=requests.get(obj)
     if obj:
         obj=obj.json()
+        findic={}
         findic["name"]=obj[0]["name"]
         findic["capital"]=obj[0]["capital"]
         findic["population"]=obj[0]["population"]
@@ -70,6 +72,7 @@ def Search():
         obj=requests.get(obj)
         if obj:
             obj=obj.json()
+            findic={}
             findic["name"]=obj["name"]
             findic["capital"]=obj["capital"]
             findic["population"]=obj["population"]
@@ -83,6 +86,7 @@ def Search():
             obj=requests.get(obj)
             if obj:
                 obj=obj.json()
+                findic={}
                 findic["name"]=obj["name"]
                 findic["capital"]=obj["capital"]
                 findic["population"]=obj["population"]
@@ -96,6 +100,7 @@ def Search():
                 obj=requests.get(obj)
                 if obj:
                     obj=obj.json()
+                    findic={}
                     findic["name"]=obj["name"]
                     findic["capital"]=obj["capital"]
                     findic["population"]=obj["population"]

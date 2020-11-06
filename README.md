@@ -28,7 +28,7 @@ Note/Comments:
 
 * Task 2: DONE
 
-* Task 3: IN-PROGRESS
+* Task 3: Done
 
 * Task 4: IN-PROGRESS
 
