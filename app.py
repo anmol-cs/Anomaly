@@ -47,7 +47,6 @@ def codeSearch(code):
         return jsonify(findic)
     else:
         return(err)
-        
 
 #TASK 3: SEARCH COUNTRY 
 @app.route('/country/search', methods=['GET'])
@@ -87,27 +86,28 @@ def Search():
             if obj:
                 obj=obj.json()
                 findic={}
-                findic["name"]=obj["name"]
-                findic["capital"]=obj["capital"]
-                findic["population"]=obj["population"]
-                findic["flag"]=obj["flag"]
-                findic["totalLanguages"]=count_dic(obj["languages"])
-                findic["totalCurencies"]=count_dic(obj["currencies"])
-                findic["totalTimezones"]=len(obj["timezones"])
+                findic["name"]=obj[0]["name"]
+                findic["capital"]=obj[0]["capital"]
+                findic["population"]=obj[0]["population"]
+                findic["flag"]=obj[0]["flag"]
+                findic["totalLanguages"]=count_dic(obj[0]["languages"])
+                findic["totalCurencies"]=count_dic(obj[0]["currencies"])
+                findic["totalTimezones"]=len(obj[0]["timezones"])
                 return jsonify(findic)
-            else:#check for capital               
+            else:#check for capital 
+                print("u reached in capital")              
                 obj="https://restcountries.eu/rest/v2/capital/"+searchString
                 obj=requests.get(obj)
                 if obj:
                     obj=obj.json()
                     findic={}
-                    findic["name"]=obj["name"]
-                    findic["capital"]=obj["capital"]
-                    findic["population"]=obj["population"]
-                    findic["flag"]=obj["flag"]
-                    findic["totalLanguages"]=count_dic(obj["languages"])
-                    findic["totalCurencies"]=count_dic(obj["currencies"])
-                    findic["totalTimezones"]=len(obj["timezones"])
+                    findic["name"]=obj[0]["name"]
+                    findic["capital"]=obj[0]["capital"]
+                    findic["population"]=obj[0]["population"]
+                    findic["flag"]=obj[0]["flag"]
+                    findic["totalLanguages"]=count_dic(obj[0]["languages"])
+                    findic["totalCurencies"]=count_dic(obj[0]["currencies"])
+                    findic["totalTimezones"]=len(obj[0]["timezones"])
                     return jsonify(findic)
                 else:#ERROR
                     return(err)
