@@ -20,8 +20,8 @@ def nameSearch(country_name):
         findic['region']=obj[0]['region']
         findic['population']=obj[0]['population']
         findic['flag']=obj[0]['flag']
-        findic['totalLanguages']=count_dic(obj[0]['languages'])
-        findic['totalCurrencies']=count_dic(obj[0]['currencies'])
+        findic['totalLanguages']=len(obj[0]['languages'])
+        findic['totalCurrencies']=len(obj[0]['currencies'])
         return jsonify(findic)
     else:
         return(err1)
@@ -41,8 +41,8 @@ def codeSearch(country_code):
         findic['region']=obj['region']
         findic['population']=obj['population']
         findic['flag']=obj['flag']
-        findic['totalLanguages']=count_dic(obj['languages'])
-        findic['totalCurencies']=count_dic(obj['currencies'])
+        findic['totalLanguages']=len(obj['languages'])
+        findic['totalCurencies']=len(obj['currencies'])
         findic['totalTimezones']=len(obj['timezones'])
         return jsonify(findic)
     else:
@@ -62,8 +62,8 @@ def Search():
         findic['capital']=obj[0]['capital']
         findic['population']=obj[0]['population']
         findic['flag']=obj[0]['flag']
-        findic['totalLanguages']=count_dic(obj[0]['languages'])
-        findic['totalCurrencies']=count_dic(obj[0]['currencies'])
+        findic['totalLanguages']=len(obj[0]['languages'])
+        findic['totalCurrencies']=len(obj[0]['currencies'])
         findic['totalTimezones']=len(obj[0]['timezones'])
         return jsonify(findic)
     else:#check for code
@@ -76,8 +76,8 @@ def Search():
             findic['capital']=obj['capital']
             findic['population']=obj['population']
             findic['flag']=obj['flag']
-            findic['totalLanguages']=count_dic(obj['languages'])
-            findic['totalCurencies']=count_dic(obj['currencies'])
+            findic['totalLanguages']=len(obj['languages'])
+            findic['totalCurencies']=len(obj['currencies'])
             findic['totalTimezones']=len(obj['timezones'])
             return jsonify(findic)
         else:#check for calling code               
@@ -90,8 +90,8 @@ def Search():
                 findic['capital']=obj[0]['capital']
                 findic['population']=obj[0]['population']
                 findic['flag']=obj[0]['flag']
-                findic['totalLanguages']=count_dic(obj[0]['languages'])
-                findic['totalCurencies']=count_dic(obj[0]['currencies'])
+                findic['totalLanguages']=len(obj[0]['languages'])
+                findic['totalCurencies']=len(obj[0]['currencies'])
                 findic['totalTimezones']=len(obj[0]['timezones'])
                 return jsonify(findic)
             else:#check for capital 
@@ -105,19 +105,14 @@ def Search():
                     findic['capital']=obj[0]['capital']
                     findic['population']=obj[0]['population']
                     findic['flag']=obj[0]['flag']
-                    findic['totalLanguages']=count_dic(obj[0]['languages'])
-                    findic['totalCurencies']=count_dic(obj[0]['currencies'])
+                    findic['totalLanguages']=len(obj[0]['languages'])
+                    findic['totalCurencies']=len(obj[0]['currencies'])
                     findic['totalTimezones']=len(obj[0]['timezones'])
                     return jsonify(findic)
                 else:#ERROR
                     return(err1)
 
 err1={'status':404,'message':'Country not found'}
-def count_dic(dicto):
-    count=0
-    for i in dicto:
-           count+=1
-    return count
 
 #SOLUTION 2: COVID-19
 #TASK 4: Covid latest counts by COUNTRY NAME
